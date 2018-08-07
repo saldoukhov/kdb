@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './Hello.css';
-import {VictoryPie, VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from "victory";
+import {VictoryPie, VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack} from "victory";
 
 export interface Props {
     name: string;
@@ -52,13 +52,13 @@ function Hello({name, enthusiasmLevel = 1, onIncrement, onDecrement}: Props) {
 
     return (
         <div className="hello">
-            {/*<div className="greeting">*/}
-            {/*Hello {name + getExclamationMarks(enthusiasmLevel)}*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*<button onClick={onDecrement}>-</button>*/}
-            {/*<button onClick={onIncrement}>+</button>*/}
-            {/*</div>*/}
+            <div className="greeting">
+                Hello {name + getExclamationMarks(enthusiasmLevel)}
+            </div>
+            <div>
+                <button onClick={onDecrement}>-</button>
+                <button onClick={onIncrement}>+</button>
+            </div>
             {/*<VictoryPie/>*/}
             <VictoryChart
                 theme={VictoryTheme.material}
@@ -104,8 +104,7 @@ function Hello({name, enthusiasmLevel = 1, onIncrement, onDecrement}: Props) {
 
 export default Hello;
 
-// helpers
 
-// function getExclamationMarks(numChars: number) {
-//     return Array(numChars + 1).join('!');
-// }
+function getExclamationMarks(numChars: number) {
+    return Array(numChars + 1).join('!');
+}
